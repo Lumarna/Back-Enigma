@@ -29,7 +29,7 @@ var jwtCheck = jwt({
       jwksRequestsPerMinute: 5,
       jwksUri: 'https://dev-f4s13og2.us.auth0.com/.well-known/jwks.json'
 }),
-audience: 'aapi-enigma',
+audience: 'api-enigma',
 issuer: 'https://dev-f4s13og2.us.auth0.com/',
 algorithms: ['RS256']
 });
