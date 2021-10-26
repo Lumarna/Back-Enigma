@@ -7,6 +7,7 @@ import {
   deleteSale
 } from '../../controlers/sale/saleControler.js';
 
+
 const rutasVenta = Express.Router();
 
 const genericCallback = (res) => (err, result) => {

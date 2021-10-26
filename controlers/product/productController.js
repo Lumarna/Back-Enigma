@@ -1,6 +1,7 @@
 import { getDB } from '../../db/db.js';
 import { ObjectId } from 'mongodb';
 
+
 const getAllProducts = async (callback) => {
   const baseDeDatos = getDB();
   await baseDeDatos.collection('Productos').find().limit(50).toArray(callback);
