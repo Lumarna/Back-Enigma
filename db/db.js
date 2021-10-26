@@ -3,23 +3,23 @@ import dotenv from 'dotenv';
 
 dotenv.config({ path: './.env' });
 
-const connectionString = process.env.DATABASE_URL;
+const stringConexion = process.env.DATABASE_URL;
 
-const client = new MongoClient(connectionString, {
+const client = new MongoClient(stringConexion, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 let baseDeDatos;
 
-const connectServer = (callback) => {
+const conectarBD = (callback) => {
   client.connect((err, db) => {
     if (err) {
       console.error('Error conectando a la base de datos');
       return 'error';
     }
-    baseDeDatos = db.db('datos');
-    console.log('Conexión exitosa a BaseDeDatos');
+    baseDeDatos = db.db('ventasEnigma');
+    console.log('baseDeDatos conectada');
     return callback();
   });
 };
@@ -28,25 +28,4 @@ const getDB = () => {
   return baseDeDatos;
 };
 
-export { connectServer, getDB };
-
-// let dbConnection;
-
-// module.exports = {
-//   connectToServer: function (callback) {
-//     client.connect(function (err, db) {
-//       if (err || !db) {
-//         return callback(err);
-//       }
-
-//       dbConnection = db.db('FitnesShop');
-//       console.log('Successfully connected to MongoDB.');
-
-//       return callback();
-//     });
-//   },
-
-//   getDb: function () {
-//     return dbConnection;
-//   },
-// };
+export { conectarBD, getDB };
