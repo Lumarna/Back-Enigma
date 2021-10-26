@@ -2,8 +2,8 @@
   "name": "api-ventas",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/MisionTic-Ciclo-3-Dev-Team/backen.git",
-  "author": "Fabio Nelson <quindioseguro@gmail.com>",
+  "repository": "",
+  "author": "",
   "license": "MIT",
   "type": "module",
   "scripts": {
